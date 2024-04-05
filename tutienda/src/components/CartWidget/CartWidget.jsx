@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom"
 import pokeball from "../../assets/pokeball.png"
 
 const CartWidget = () => {
     return(
-        <button>
+        <Link to="/cart">
             <img src={pokeball} style={{width: 50}}/>
             0
-        </button>
+        </Link>
     )
 }
 
