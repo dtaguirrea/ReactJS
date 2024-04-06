@@ -1,6 +1,20 @@
 import ItemCount from "../ItemCount/ItemCount"
+import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
 
-const ItemDetail = ({name, category, img, price,description,stock})=>{
+const ItemDetail = ({id, name, category, img, price,description,stock})=>{
+    const [quantity, setQuantity] =useState(0)
+
+    const {addItem} = useContext(CartContext)
+    const handleOnAdd = (quantity) =>{
+        const objProductToAdd ={
+            id,name,price,quantity
+        }
+        console.log(objProductToAdd)
+        setQuantity(quantity)
+        addItem(objProductToAdd)
+    }
     return (
         <article>
             <img src={img} style={{width: 100}}/>
@@ -8,7 +22,7 @@ const ItemDetail = ({name, category, img, price,description,stock})=>{
             <h4> Categoria : {category}</h4>
             <h4>${price}</h4>
             <h4>Descripcion: {description}</h4>
-            <ItemCount stock={stock}/>
+            {quantity ===0 ? <ItemCount stock={stock} onAdd={handleOnAdd}/> : <Link to={"/cart"}>Finalizar Compra</Link>}
         </article>
     )
 }
