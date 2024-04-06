@@ -18,7 +18,7 @@ export const CartProvider = ({children}) => {
         return cart.some(prod=>prod.id===id)
     }
     const clearCart = () =>{
-        setCart=[]
+        setCart([])
     }
     const getTotalQuantity = () => {
         let acumulador=0

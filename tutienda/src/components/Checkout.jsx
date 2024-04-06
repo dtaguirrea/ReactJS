@@ -5,7 +5,7 @@ import { addDoc,collection, documentId, getDocs,query,where, writeBatch } from "
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null)
-    const {cart,total} = useContext(CartContext)
+    const {cart,total,clearCart} = useContext(CartContext)
     const createOrder = async(userData) =>{
         try{
             setLoading(true)
