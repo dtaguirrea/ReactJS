@@ -2,13 +2,14 @@ import {  useState, useEffect } from "react"
 import { getProducts, getProductsByCategory } from "../../asyncMock"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
-
+import { useNotification } from "../../notification/NotificationService"
 const ItemListContainer = ({greeting}) =>{
     const [products, setProducts] = useState([])
     const [loading,setLoading] =useState(true)
-
+    const [error, setError] = useState('')
     const { categoryId } = useParams()
-    
+    const {showNotification } = useNotification()
+
     useEffect(()=>{
         setLoading(true)
         const asyncFunction = categoryId ? getProductsByCategory : getProducts
@@ -18,7 +19,7 @@ const ItemListContainer = ({greeting}) =>{
                 setProducts(result)
             })
             .catch(error=>{
-                console.log(error)
+                setError('Hubo un error cargando los datos')
             })
             .finally(()=>{
                 setLoading(false)
@@ -28,7 +29,9 @@ const ItemListContainer = ({greeting}) =>{
     if(loading){
         return <h1>Cargando listado de pokemon</h1>
     }
-
+    if(error){
+        return showNotification('error',error)
+    }
     return (
         <main>
             <h1>{greeting}</h1>
