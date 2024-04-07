@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 
-const Item = ({id, name, category, img, price})=>{
+const Item = ({id, name, img, price})=>{
     return (
-        <article>
-            <h4> Categoria : {category}</h4>
-            <h1>{name}</h1>
-            <img src={img} style={{width: 100}}/>
-            <h4>${price}</h4>
-            <Link to={`/item/${id}`}> ver detalle</Link>
+        <article style={{padding: 50, backgroundColor: 'white'}}>
+            <div >
+                <h1 style={{display:'flex', alignItems: 'center', justifyContent: 'space-around'}}>{name}</h1>
+                <img src={img} style={{width: 150}}/>
+                <h4 style={{display:'flex', alignItems: 'center', justifyContent: 'space-around'}}>${price}</h4>
+                <Link to={`/item/${id}`} style={{textDecoration: 'none', color: 'black',display:'flex', alignItems: 'center', justifyContent: 'space-around'}}> <button>Ver detalle</button></Link>
+            </div>
         </article>
     )
 }

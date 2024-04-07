@@ -18,8 +18,8 @@ const Notification = ( {notificationData}) => {
     }
     return (
       <article style={notificationStyle}>
-        <h1>{notificationData.type}</h1>
-        {notificationData.text}
+        <h1 style={{display:'flex', justifyContent:"center"}}>{notificationData.type}</h1>
+        <h3 style={{display:'flex', justifyContent:"center"}}>{notificationData.text}</h3>
       </article>
     )
 }

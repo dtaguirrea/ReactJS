@@ -16,10 +16,12 @@ const ItemCount = ({ initial = 1, stock, onAdd}) =>{
     }
     return (
         <article>
-            <h3>{count}</h3>
-            <button onClick={decrement}>-</button>
-            <button onClick={()=> onAdd(count)}>Agregar al carrito</button>
-            <button onClick={increment}>+</button>
+            <h3 style={{display:'flex', justifyContent:"center"}}>Pokemon salvajes: {count}</h3>
+            <div style={{display:'flex', justifyContent:"center"}}>
+                <button onClick={decrement}>-</button>
+                <button onClick={()=> onAdd(count)}>Agregar al PC</button>
+                <button onClick={increment}>+</button>
+            </div>
         </article>
     )
 }

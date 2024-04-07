@@ -37,14 +37,14 @@ const ItemListContainer = ({greeting}) =>{
     },  [categoryId])
     
     if(loading){
-        return <h1>Cargando listado de pokemon</h1>
+        return <h1 style={{backgroundColor:'white',display: 'flex', justifyContent:'space-around'}}>Cargando listado de pokemon</h1>
     }
     if(error){
         return showNotification('error',error)
     }
     return (
         <main>
-            <h1>{greeting}</h1>
+            <h1 style={{display:'flex', justifyContent:'space-around'}}>{greeting}</h1>
             <ItemList products ={products}></ItemList>
         </main>
     )

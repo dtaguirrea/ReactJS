@@ -15,7 +15,7 @@ const App = () => {
           <CartProvider>
             <Navbar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting={"Test"}/>}/>
+              <Route path='/' element={<ItemListContainer greeting={"Bienvenidos al mayor comercio pokemon!"}/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer greeting={"Productos de la categoría"}/>}></Route>
               <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
               <Route path='/cart' element={<CartView/>}></Route>

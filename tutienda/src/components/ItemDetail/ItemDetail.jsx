@@ -18,12 +18,12 @@ const ItemDetail = ({id, name, category, img, price,description,stock})=>{
     }
     return (
         <article>
-            <img src={img} style={{width: 100}}/>
-            <h1>{name}</h1>
-            <h4> Categoria : {category}</h4>
-            <h4>${price}</h4>
-            <h4>Descripcion: {description}</h4>
-            {quantity ===0 ? <ItemCount stock={stock} onAdd={handleOnAdd}/> : <Link to={"/cart"}>Finalizar Compra</Link>}
+            <img src={img} style={{display: 'block',marginLeft: 'auto', marginRight: 'auto', width: '15%'}}/>
+            <h1 style={{display:'flex', justifyContent:"center"}}>{name}</h1>
+            <h4 style={{display:'flex', justifyContent:"center"}}> Tipo : {category}</h4>
+            <h4 style={{display:'flex', justifyContent:"center"}}>${price}</h4>
+            <h4 style={{display:'flex', justifyContent:"center"}}>Descripcion: {description}</h4>
+            {quantity ===0 ? <ItemCount stock={stock} onAdd={handleOnAdd}/> : <Link to={"/cart"} style={{display:'flex', justifyContent:"center", textDecoration:'none'}}><button>Finalizar Compra</button></Link>}
         </article>
     )
 }

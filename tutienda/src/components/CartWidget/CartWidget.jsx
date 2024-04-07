@@ -7,9 +7,9 @@ const CartWidget = () => {
 
     const {totalQuantity} = useContext(CartContext)
     return(
-        <Link to="/cart">
+        <Link to="/cart" style={{display:"flex", textDecoration: 'none', color: '#fbfaf5', alignItems: 'center', }}>
             <img src={pokeball} style={{width: 50}}/>
-            {totalQuantity}
+            <h4 style={{paddingLeft: 10}}>Atrapados: {totalQuantity}</h4>
         </Link>
     )
 }

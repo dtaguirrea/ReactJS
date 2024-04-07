@@ -18,7 +18,7 @@ const ItemDetailContainer = () =>{
     },  [itemId])
     return (
         <main>
-            <h1>Detalle de productos</h1>
+            <h1 style={{display:'flex', justifyContent:"center"}}>Detalle de productos</h1>
             <ItemDetail {...product}/>
         </main>
     )

@@ -6,19 +6,19 @@ const CartView = () =>{
 
     return(
         <div>
-            <h1>Atrapados</h1>
+            <h1 style={{justifyContent: "center", display:"flex", paddingTop:30}}>Pokemon Atrapados:</h1>
             <section>
             {
                 cart.map(prod=>{
                     return (
                         <article key={prod.id}>
-                            <h2>{prod.name}</h2>
+                            <h2 style={{display:'flex', justifyContent:'center'}}>{prod.name}</h2>
                         </article>
                     )
                 })
             }
             </section>
-            <Link to='/checkout'>Checkout</Link>
+            <Link to='/checkout' style={{textDecoration:'None',justifyContent: "center", display:"flex"}}><button style={{fontSize:18}}>Checkout</button></Link>
         </div>
     )
 }
